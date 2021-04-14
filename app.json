@@ -1,0 +1,12 @@
+{
+  "name": "RaspisApp",
+  "displayName": "RaspisApp",
+  "expo": {
+    "name": "RaspisApp",
+    "slug": "RaspisApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
