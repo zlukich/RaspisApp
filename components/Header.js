@@ -1,15 +1,6 @@
 import React from 'react'
 import { StyleSheet, View,Text } from 'react-native'
 
-const Header = ({value}) => {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.text}>
-                {value}
-            </Text>
-        </View>
-    )
-}
 const styles = StyleSheet.create({
     container:{
         
@@ -27,4 +18,15 @@ const styles = StyleSheet.create({
     }
 
 })
+
+const Header = ({value}) => {
+    return (
+        <View style={styles.container}>
+            <Text style={styles.text}>
+                {value}{' ('+(new Date()).getFullYear() +')'}
+            </Text>
+        </View>
+    )
+}
+
 export default Header
