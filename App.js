@@ -59,16 +59,16 @@ import Info from './components/Info'
 const Stack=createStackNavigator();
 
 export default function App() {
-  const [isLoading, setLoading] = useState(true)
-  const [data, setData] = useState([])
+  //const [isLoading, setLoading] = useState(true)
+  //const [data, setData] = useState([])
 
-  useEffect(() => {
-    fetch('https://osbb-musson.com.ua:58960/entirex/xmlrt')
-      .then((response) => response.json())
-      .then((json) => setData(json.movies))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, [])
+  // useEffect(() => {
+  //   fetch('https://osbb-musson.com.ua:58960/entirex/xmlrt')
+  //     .then((response) => response.json())
+  //     .then((json) => setData(json.movies))
+  //     .catch((error) => console.error(error))
+  //     .finally(() => setLoading(false));
+  // }, [])
   return (
     <NavigationContainer style={styles.container}>
       <Stack.Navigator initialRouteName='Calendar'>

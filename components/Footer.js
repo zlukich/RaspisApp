@@ -6,13 +6,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import FolderIcon from '@material-ui/icons/Folder'
 
-const Footer = ({value}) => {
+const Footer = ({value, navigation}) => {
     return (
-        <BottomNavigation value={value} >
-            <BottomNavigationAction label="Recents" value="calendar" icon={<svg width="90" height="56" viewBox="0 0 90 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <BottomNavigation value = {value}>
+            <BottomNavigationAction onKeyPress={()=>navigation.navigate('Calendar')} label="Recents" value="calendar" icon={<svg width="90" height="56" viewBox="0 0 90 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i)">
 <rect width="90" height="56" fill="white"/>
-<rect x="34" y="19" width="20" height="19" rx="3" stroke="#0872B9" stroke-width="2"/>
+<rect x="34" y="19" width="20" height="19" rx="3" stroke="#0872B9" strokeWidth="2"/>
 <path d="M39 17V19" stroke="#0872B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M49 17V19" stroke="#0872B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M34 24H54" stroke="#0872B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,7 +36,7 @@ const Footer = ({value}) => {
 </defs>
 </svg>
 } />
-            <BottomNavigationAction label="Favorites" value="info" icon={<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <BottomNavigationAction onKeyPress={()=>navigation.navigate('Info')} label="Favorites" value="info" icon={<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M11 15V11" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M11 7H11.01" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

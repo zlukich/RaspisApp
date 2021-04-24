@@ -7,7 +7,7 @@ import Subject from './Subject'
 import ChangeDay from './ChangeDay'
 import Footer from './Footer'
 import {Divider} from 'react-native-elements'
-export const Calendar = () => {
+export const Calendar = ({navigation}) => {
     return (
         <View>
         <Header value='Розклад занятть' />
@@ -27,7 +27,7 @@ export const Calendar = () => {
           )
           }
         /> */}
-     <Footer value='Some Value'></Footer>
+     <Footer value='Some Value' navigation={navigation}></Footer>
      </View>
     )
 }
