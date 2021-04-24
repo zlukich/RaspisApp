@@ -70,12 +70,14 @@ export default function App() {
   //     .finally(() => setLoading(false));
   // }, [])
   return (
+    
     <NavigationContainer style={styles.container}>
       <Stack.Navigator initialRouteName='Calendar'>
           <Stack.Screen name='Calendar' component={Calendar}/>
           <Stack.Screen name='Info' component={Info}/>
       </Stack.Navigator>
     </NavigationContainer>
+   
   );
 }
 
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    height:1000
+    
 
   },
 });

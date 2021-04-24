@@ -7,8 +7,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn'
 import FolderIcon from '@material-ui/icons/Folder'
 
 const Footer = ({value, navigation}) => {
-    return (
-        <BottomNavigation value = {value}>
+    return (<View style={styles.bottom}>
+        <BottomNavigation value = {value} >
             <BottomNavigationAction onClickCapture={()=>navigation.navigate('Calendar')} label="Recents" value="calendar" icon={<svg width="90" height="56" viewBox="0 0 90 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i)">
 <rect width="90" height="56" fill="white"/>
@@ -53,22 +53,18 @@ const Footer = ({value, navigation}) => {
 </svg>
 } />
         </BottomNavigation>
+        </View>
     )
 }
 const styles = StyleSheet.create({
     bottom:{
         flex: 1,
-        justifyContent: 'flex-end',
-        marginBottom: 36,
-        flexDirection: 'row'
-
+        //marginEnd: 'auto',
+       // marginBottom: 36,
+        flexDirection: 'row',
+        //alignSelf:'flex-end'
+        alignItems:'flex-end',
+        justifyContent:'space-around'
     },
-    text:{
-        fontSize:30,
-        color: '#ffffff',
-        textAlign:'center',
-        
-    }
-
 })
 export default Footer

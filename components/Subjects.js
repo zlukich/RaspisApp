@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, View,Text } from 'react-native'
 
-const Subjects = ({value}) => {
+const Subjects = ({subjects}) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>
-            {value}
-            </Text>
+            {
+            subjects.map((subject,index)=>(<Subject key={subject.id} subject = {subject}/>))
+          }
         </View>
     )
 }

@@ -7,7 +7,7 @@ export const Info = ({navigation}) => {
         <View style = {{ flex: 1,
             backgroundColor: '#ffffff',
             height:1000 }}>
-       <Text>Лээ ты кудэ, не видишь узбек идет</Text>
+       <Text style={{flex:2,textAlign:'center',alignSelf:'center'}}>Лээ ты кудэ, не видишь узбек идет</Text>
       <Footer value='Some value' navigation={navigation}></Footer>
      </View>
     )
