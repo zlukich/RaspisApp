@@ -3,6 +3,7 @@ import { StyleSheet, View,Text } from 'react-native'
 import {Divider} from 'react-native-elements'
 import {Button} from 'react-native'
 import ExtendedInfo from './ExtendedInfo'
+import ExpandButton from './ExpandButton'
 
 const Subject = ({value}) => {
     const [expanded, setExpanded] = useState(false)
@@ -17,12 +18,14 @@ const Subject = ({value}) => {
                 <View style={styles.secondView}>
                       <Text style={styles.subjTime}>Time</Text>
                       <Text style={styles.subjRoom}>Room number</Text>
-                      <button Text = "Expand" onClick={() => setExpanded(!expanded)}/>
                 </View>
             </View>
-            {expanded 
-                ? (<ExtendedInfo/>)
-                : (<View/>)}
+            <View style = {{flex:2}}>
+                <ExtendedInfo isExpanded = {expanded}/>
+            </View>
+            <View style = {styles.expander}>
+                <ExpandButton changeStateFunction= {() => setExpanded(!expanded)}/>
+            </View>
             <Divider/>
         </View>
     )
@@ -55,6 +58,11 @@ const styles = StyleSheet.create({
         paddingTop:15,
     },
     expander:{
+        flex:3,
+        float:'right',
+        width: 100,
+        color: '#ffffff',
+        padding:15
     },
     subjName:{
         flex:1,

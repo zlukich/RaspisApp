@@ -20,13 +20,15 @@ const styles = StyleSheet.create({
     }
 })
 
-const ExtendedInfo = () => {
-    return (
-        <View style={styles.expandedInfo}>
-                <Text style = {styles.subjTheme}>Тема: ********</Text>
-                <Text style = {styles.subjHomeWork}>Д/З:  ********</Text>
-            </View>
-        )
+const ExtendedInfo = ({isExpanded}) => {
+    if(isExpanded)
+    	return (
+	        <View style={styles.expandedInfo}>
+	                <Text style = {styles.subjTheme}>Тема: ********</Text>
+	                <Text style = {styles.subjHomeWork}>Д/З:  ********</Text>
+	            </View>
+	        )
+    return <View/>
 }
 
 export default ExtendedInfo
