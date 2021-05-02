@@ -1,32 +1,42 @@
 import React from 'react'
-import { StyleSheet, View,Text } from 'react-native'
+import { StyleSheet, View, Text, StatusBar } from 'react-native'
 
 const styles = StyleSheet.create({
-    container:{
-        
-        height: 80,
-        backgroundColor: '#195EC6',
-        alignItems:'baseline',
-        padding:15
-
+    container: {
+        backgroundColor: '#0872B9',
+        alignItems: 'center',
+        padding: '3%'
     },
-    text:{
-        fontSize:30,
+    text: {
+        fontSize: 18,
+        fontWeight: '600',
         color: '#ffffff',
-        textAlign:'center',
-        
     }
-
 })
 
-const Header = ({value}) => {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.text}>
-                {value}{' ('+(new Date()).getFullYear() +')'}
-            </Text>
-        </View>
-    )
+const Header = ({ value }) => {
+    if (value == 'Розклад занять') {
+        return (
+            <View style={styles.container}>
+                <StatusBar
+                    backgroundColor="#0872B9" />
+                <Text style={styles.text}>
+                    {value}{' (' + (new Date()).getFullYear() + ')'}
+                </Text>
+            </View>
+        );
+    }
+    else {
+        return (
+            <View style={styles.container}>
+                <StatusBar
+                    backgroundColor="#0872B9" />
+                <Text style={styles.text}>
+                    {value}
+                </Text>
+            </View>
+        );
+    }
 }
 
-export default Header
+export default Header;
