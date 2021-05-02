@@ -1,2 +1,0 @@
-# RaspisApp
-Project for hearts
