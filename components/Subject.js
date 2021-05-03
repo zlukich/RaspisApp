@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     mainInfoContainer: {
         flex: 1,
         flexDirection: 'row',
-        height: '100%',
         backgroundColor: 'white',
         padding: 15,
         alignItems: 'stretch'

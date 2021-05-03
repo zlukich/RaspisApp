@@ -4,11 +4,11 @@ import { StyleSheet, View, Text } from 'react-native'
 
 const styles = StyleSheet.create({
     expandedInfo: {
-        flex: 2,
+    	flexDirection: 'column',
         fontSize: 16,
         backgroundColor: '#fff',
         textAlign: 'left',
-        padding: '5%'
+        padding: '1%'
     },
     subjTheme: {
         flex: 1,
