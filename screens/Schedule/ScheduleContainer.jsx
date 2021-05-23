@@ -12,7 +12,7 @@ class ScheduleContainer extends React.Component {
 
     render() {
         return (
-           <Schedule days = {this.props.days}/>
+           <Schedule days = {this.props.days} />
         )
     }
 };
@@ -20,7 +20,8 @@ class ScheduleContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        days: state.schedule.days
+        days: state.schedule.days,
+        testDay: state.schedule.testDay
     }
 }
 

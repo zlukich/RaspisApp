@@ -21,7 +21,7 @@ const DateComponent = (props) => {
         <View style={styles.container}>
             <Text style={styles.text}>
                 <Icon name='left' color='#0872B9' size={18} />
-                {props.dayName} - {props.dayDate}
+                {props.dayName}{/* - {props.dayDate}*/}
                 <Icon name='right' color='#0872B9' size={18} />
             </Text>
         </View>

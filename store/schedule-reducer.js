@@ -15,6 +15,7 @@ let initialState={
                 startTime: '9:30',
                 endTime: '10:50',
                 lecturerName: 'Vasiliy Vasilievich Vasiliev',
+                subjectRoom:'73'
             },
             {
                 subjectName: 'Mathematics',
@@ -23,6 +24,7 @@ let initialState={
                 startTime: '11:20',
                 endTime: '12:40',
                 lecturerName: 'Petr Petrovich Petrov',
+                subjectRoom:'45'
             }
         ]
     },
@@ -37,6 +39,7 @@ let initialState={
                     startTime: '8:00',
                     endTime: '9:20',
                     lecturerName: 'Ivan Ivanovich Ivanov',
+                    subjectRoom:'12'
                 },
             ]
         }
@@ -46,7 +49,7 @@ let initialState={
 export const scheduleReducer = (state=initialState, action)=>{
     switch (action.type){
         case GET_CURRENT_WEEK_SCHEDULE:{
-            return {...state, ...action.payload}
+            return {...state, days: action.payload}
         }
         default:{
             return {...state};
@@ -60,8 +63,10 @@ export let getCurrentWeekScheduleAC = (payload) =>({type:GET_CURRENT_WEEK_SCHEDU
 export let getCurrentWeekScheduleThunk = () =>{
     return async (dispatch) => {
         let payload = await scheduleAPI.sendData();
-        dispatch(getCurrentWeekScheduleAC([{
-            dayName: 'Monday',
+        console.log(payload);
+        dispatch(getCurrentWeekScheduleAC(payload))
+        /*dispatch(getCurrentWeekScheduleAC([{
+            dayName: payload.dayName,
             dayDate:'10.05.2021',
             subjectsList:[
                 {
@@ -96,7 +101,7 @@ export let getCurrentWeekScheduleThunk = () =>{
                     },
                 ]
             }
-        ]))
+        ]))*/
     }
 }
 

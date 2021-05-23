@@ -14,7 +14,7 @@ export const Schedule = (props) => {
         <ScrollView stickyHeaderIndices={[0]}
             showsVerticalScrollIndicator={false} style={styles.container}>
             <Header value="Розклад занять" />
-            <SwiperComponent days={props.days}/>
+            <SwiperComponent days={props.days} />
         </ScrollView>
     );
 }

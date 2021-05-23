@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
 const Subject = (props) => {
     const [expanded, setExpanded] = useState(false)
-    let {subjectName, subjectType, subjectTheme, startTime, endTime, lecturerName} = props.subject;
+    let {subjectName, subjectType, subjectTheme, startTime, endTime, lecturerName, subjectRoom} = props.subject;
     return (
         <View style={styles.container}>
             <View style={styles.mainInfoContainer}>
@@ -73,8 +73,8 @@ const Subject = (props) => {
                     <Text style={styles.subjName}>{subjectName}</Text>
                 </View>
                 <View style={styles.secondView}>
-                    <Text style={styles.subjTime}>{startTime}</Text>
-                    <Text style={styles.subjRoom}>{endTime}</Text>
+                    <Text style={styles.subjTime}>{startTime} - {endTime}</Text>
+                    <Text style={styles.subjRoom}>ауд. {subjectRoom}</Text>
                 </View>
             </View>
             <View style={{ flex: 2 }}>
