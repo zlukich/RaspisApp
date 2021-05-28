@@ -106,6 +106,9 @@ export let scheduleAPI = {
     },
 
 }
+export let authAPI = {
+
+}
 
 
 function parseXml(xml) {

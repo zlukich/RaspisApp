@@ -4,14 +4,15 @@ import BottomTab from './components/BottomTabNavigator';
 import {compose} from "redux";
 import {Provider} from "react-redux";
 import store from './store/store'
+import Login from "./screens/Login/Login";
 
 
 function App() {
     return (
         <Provider store={store}>
-            <NavigationContainer>
+            {store.getState().auth.isAuthorized ? <NavigationContainer>
                 <BottomTab/>
-            </NavigationContainer>
+            </NavigationContainer> : <Login/>}
         </Provider>
     );
 }
