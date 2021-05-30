@@ -3,31 +3,6 @@ import { StyleSheet, View, Text } from 'react-native'
 import ExtendedInfo from './ExtendedInfo'
 import ExpandButton from './ExpandButton'
 
-const Subject = ({ value }) => {
-    const [expanded, setExpanded] = useState(false)
-    return (
-        <View style={styles.container}>
-            <View style={styles.mainInfoContainer}>
-                <View style={styles.firstView}>
-                    <Text style={styles.subjType}>Type</Text>
-                    <Text style={styles.subjTeacher}>Teacher</Text>
-                    <Text style={styles.subjName}>{value}</Text>
-                </View>
-                <View style={styles.secondView}>
-                    <Text style={styles.subjTime}>Time</Text>
-                    <Text style={styles.subjRoom}>Room number</Text>
-                </View>
-            </View>
-            <View style={{ flex: 2 }}>
-                <ExtendedInfo isExpanded={expanded} />
-            </View>
-            <View style={styles.expander}>
-                <ExpandButton changeStateFunction={() => setExpanded(!expanded)} />
-            </View>
-        </View>
-    )
-}
-
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column'
@@ -35,7 +10,6 @@ const styles = StyleSheet.create({
     mainInfoContainer: {
         flex: 1,
         flexDirection: 'row',
-        height: '100%',
         backgroundColor: 'white',
         padding: 15,
         alignItems: 'stretch'
@@ -85,5 +59,33 @@ const styles = StyleSheet.create({
         fontSize: 14
     }
 })
+
+
+const Subject = (props) => {
+    const [expanded, setExpanded] = useState(false)
+    let {subjectName, subjectType, subjectTheme, startTime, endTime, lecturerName, subjectRoom} = props.subject;
+    return (
+        <View style={styles.container}>
+            <View style={styles.mainInfoContainer}>
+                <View style={styles.firstView}>
+                    <Text style={styles.subjType}>{subjectType}</Text>
+                    <Text style={styles.subjTeacher}>{lecturerName}</Text>
+                    <Text style={styles.subjName}>{subjectName}</Text>
+                </View>
+                <View style={styles.secondView}>
+                    <Text style={styles.subjTime}>{startTime} - {endTime}</Text>
+                    <Text style={styles.subjRoom}>ауд. {subjectRoom}</Text>
+                </View>
+            </View>
+            <View style={{ flex: 2 }}>
+                <ExtendedInfo isExpanded={expanded} subjectTheme={subjectTheme}/>
+            </View>
+            <View style={styles.expander}>
+                <ExpandButton changeStateFunction={() => setExpanded(!expanded)} />
+            </View>
+        </View>
+    )
+}
+
 
 export default Subject
