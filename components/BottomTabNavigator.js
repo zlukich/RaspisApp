@@ -1,7 +1,7 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Info from '../screens/Info';
+import Info from '../screens/Info/InfoContainer';
 import Archive from '../screens/Archive';
 import Profile from '../screens/Profile';
 import ScheduleIcon from '../assets/nonact-schedule.svg';
