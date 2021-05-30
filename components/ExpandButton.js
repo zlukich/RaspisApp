@@ -3,12 +3,6 @@ import { StyleSheet, View, Text } from 'react-native'
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const styles = StyleSheet.create({
-    transparentButton: {
-        backgroundColor: '#ffffff'
-
-    }
-})
 
 const ExpandButton = ({ src, changeStateFunction }) => {
     const [expanded, setExpanded] = useState(false)

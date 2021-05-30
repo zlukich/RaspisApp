@@ -4,11 +4,11 @@ import { StyleSheet, View, Text } from 'react-native'
 
 const styles = StyleSheet.create({
     expandedInfo: {
-        flex: 2,
+    	flexDirection: 'column',
         fontSize: 16,
         backgroundColor: '#fff',
         textAlign: 'left',
-        padding: '5%'
+        padding: '1%'
     },
     subjTheme: {
         flex: 1,
@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
     }
 })
 
-const ExtendedInfo = ({ isExpanded }) => {
+const ExtendedInfo = ({ isExpanded, subjectTheme}) => {
     if (isExpanded)
         return (
             <View style={styles.expandedInfo}>
-                <Text style={styles.subjTheme}>Тема: ********</Text>
+                <Text style={styles.subjTheme}>Тема: {subjectTheme}</Text>
                 <Text style={styles.subjHomeWork}>Д/З:  ********</Text>
             </View>
         )
