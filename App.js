@@ -5,6 +5,7 @@ import {compose} from "redux";
 import {Provider} from "react-redux";
 import store from './store/store'
 import Login from "./screens/Login/Login";
+import Registration from './screens/Registration/Registration';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Provider store={store}>
             {store.getState().auth.isAuthorized ? <NavigationContainer>
                 <BottomTab/>
-            </NavigationContainer> : <Login/>}
+            </NavigationContainer> : <Registration/>}
         </Provider>
     );
 }

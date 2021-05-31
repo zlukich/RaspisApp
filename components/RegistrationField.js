@@ -2,7 +2,6 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import Logo from '../assets/logo.svg'
 
 const styles = StyleSheet.create({
     text: {
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
         color: '#A0A3BD',
     },
     container: {
-        paddingTop: 'calc(30vh - 8vw)',
+        paddingTop: 'calc(20vh - 4vw)',
         flexDirection: 'column',
         alignItems: 'center',
     },
@@ -31,11 +30,8 @@ const styles = StyleSheet.create({
         width: 'min(max(30vw, 150vh - 60vw), 90vw)',
         aspectRatio: '1350 / 342'
     },
-    gap1: {
-        height: '10vh'
-    },
     gap2: {
-        height: '4vh'
+        height: '2vh'
     },
     button: {
         backgroundColor: '#3159B4',
@@ -43,25 +39,23 @@ const styles = StyleSheet.create({
         width: 'min(max(7vw + 50px, 80vh - 50vw), 50vw)',
         height: '60px'
     },
-    textbutton: {
-        letterSpacing: '2.5px',
-        paddingTop: '18px',
+    textheader: {
         textAlign: 'center',
         fontSize: 18,
         fontWeight: '600',
-        color: '#F7F7FC',
     },
 })
 
-const LoginField = ({ value }) => {
+const RegistrationField = ({ value }) => {
 
     let TStyle = {
         width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
+        paddingBottom: '2vh'
     };
     let BStyle = {
         backgroundColor: '#3159B4',
         borderRadius: '10px',
-        width: 'min(max(7vw + 50px, 80vh - 50vw), 50vw)',
+        width: 'min(max(8vw + 80px, 80vh - 50vw), 50vw)',
         height: '60px',
         textAlign: 'center',
         fontWeight: '400',
@@ -69,13 +63,19 @@ const LoginField = ({ value }) => {
     }
     return (
         <View style={styles.container}>
-            <Image style = {styles.image} source = {Logo}/>
             <View style = {styles.gap1}/>
-            <TextField style = {TStyle} label="Номер телефону" variant="outlined"> Номер телефону </TextField>
+            <Text style = {styles.textheader}>Регистрация</Text>
             <View style = {styles.gap2}/>
-            <Button style = {BStyle}> Авторизация</Button>
+            <TextField style = {TStyle} label="Имя" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Фамилия" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Отчество" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Email" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Телефон" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Пароль" variant="outlined"> Номер телефону </TextField>
+            <View style = {styles.gap2}/>
+            <Button style = {BStyle}> Подтвердить</Button>
         </View>
     );
 }
 
-export default LoginField;
+export default RegistrationField;
