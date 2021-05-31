@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {StyleSheet, Text, ScrollView, Switch, Button, FlatList, ActivityIndicator, TextInput, View} from 'react-native';
+import LoginField from '../../components/LoginField';
 
 const styles = StyleSheet.create({
     container: {
@@ -20,6 +21,14 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     item:{
+        flex: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:'center',
+        padding: 15,
+        margin:15,
+    },
+    xuitem:{
         flex: 6,
         flexDirection: 'row',
         alignItems: 'center',
@@ -31,15 +40,7 @@ const styles = StyleSheet.create({
 
 export const Login = () => {
     return (
-        <ScrollView stickyHeaderIndices={[0]}
-                    showsVerticalScrollIndicator={false}>
-            <View style={styles.container}>
-            <Text style={styles.item}>Login</Text>
-            <TextInput placeholder={'email'} style={styles.item}/>
-            <TextInput placeholder={'password'} style={styles.item}/>
-            <Button title={'Login'}style={styles.item} />
-            </View>
-        </ScrollView>
+            <LoginField/>
     );
 }
 
