@@ -107,8 +107,63 @@ export let scheduleAPI = {
 
 }
 export let authAPI = {
-
+     registration: (payload) =>{
+        let encodedXML=`<RegRaspis>
+        <regfio>${payload.firstName}</regfio>
+        <regName>${payload.lastName}</regName>
+        <regGrname>${payload.secondName}</regGrname>
+        <regSpeckode/>
+        <regMail>${payload.email}</regMail>
+        <regTelephon>${payload.phone}</regTelephon>
+        <regPassword>${payload.password}</regPassword>
+        </RegRaspis>`;
+        encodedXML = Base64.encode(encodedXML);
+        let registrationXML=`<?xml version='1.0' encoding='UTF-8' ?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xmm='http://namespace.softwareag.com/entirex/xml/mapping' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>
+        <SOAP-ENV:Body>
+        <m:WSDLOSBB xmlns:m='urn:com-softwareag-entirex-rpc:OSBB_SRV-WSDLOSBB'>
+        <USER-ID>IST301</USER-ID>
+        <FUNC>RegRaspis</FUNC>
+        <FIRMA>999</FIRMA>
+        <REQBUFB64>${encodedXML}</REQBUFB64>
+        <SIGNB64></SIGNB64>
+        </m:WSDLOSBB>
+        </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>`;
+        return instance.post('', registrationXML).then(response=>{
+            return response.data;
+        })
+     },
+     login: (payload) =>{
+         console.log(payload)
+        let encodedXML=`<?xml version='1.0' encoding='UTF-8'?><LogRaspis> 
+          <regMail>${payload.email}</regMail> 
+            <regPassword>${payload.password}</regPassword></LogRaspis>`;
+        encodedXML = Base64.encode(encodedXML);
+        let loginXML=`<?xml version='1.0' encoding='UTF-8' ?>
+        <SOAP-ENV:Envelope xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xmm='http://namespace.softwareag.com/entirex/xml/mapping' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/'>
+        <SOAP-ENV:Body>
+        <m:WSDLOSBB xmlns:m='urn:com-softwareag-entirex-rpc:OSBB_SRV-WSDLOSBB'>
+        <USER-ID>IST301</USER-ID>
+        <FUNC>LogRaspis</FUNC>
+        <FIRMA>999</FIRMA>
+        <REQBUFB64>${encodedXML}</REQBUFB64>
+        <SIGNB64></SIGNB64>
+        </m:WSDLOSBB>
+        </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>`;
+        return instance.post('', loginXML).then(response=>{
+            let dataXML = parseXml(response.data);
+            let anotherXML = parseXml(Base64.decode(dataXML.getElementsByTagName("W3VALUE")[0].childNodes[0].nodeValue));
+            console.log(anotherXML)
+        })
+     }
 }
+
+
+
+
+
 
 
 function parseXml(xml) {

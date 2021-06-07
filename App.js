@@ -13,7 +13,7 @@ function App() {
         <Provider store={store}>
             {store.getState().auth.isAuthorized ? <NavigationContainer>
                 <BottomTab/>
-            </NavigationContainer> : <Registration/>}
+            </NavigationContainer> : <Login/>}
         </Provider>
     );
 }

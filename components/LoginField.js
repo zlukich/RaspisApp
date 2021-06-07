@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Logo from '../assets/logo.svg'
-
+import {useState} from 'react'
 const styles = StyleSheet.create({
     text: {
         letterSpacing: '3px',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const LoginField = ({ value }) => {
+const LoginField = (props) => {
 
     let TStyle = {
         width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
@@ -67,13 +67,20 @@ const LoginField = ({ value }) => {
         fontWeight: '400',
         color: '#F7F7FC',
     }
+    let [loginPayload, setLoginPayload] = useState({});
+    let sumbitFuction = () =>{
+        props.login(loginPayload)
+    }
     return (
         <View style={styles.container}>
             <Image style = {styles.image} source = {Logo}/>
             <View style = {styles.gap1}/>
-            <TextField style = {TStyle} label="Номер телефону" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="email" variant="outlined"
+             onChange={()=>setLoginPayload({...loginPayload, email: event.target.value})}> email </TextField>
+             <TextField style = {TStyle} label="Номер телефону" variant="outlined"
+             onChange={()=>setLoginPayload({...loginPayload, password: event.target.value})}> Пароль </TextField>
             <View style = {styles.gap2}/>
-            <Button style = {BStyle}> Авторизация</Button>
+            <Button style = {BStyle} onClick={()=>sumbitFuction()}> Авторизация</Button>
         </View>
     );
 }

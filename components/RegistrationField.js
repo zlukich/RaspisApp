@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import {useState} from 'react'
 
 const styles = StyleSheet.create({
     text: {
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     },
 })
 
-const RegistrationField = ({ value }) => {
+const RegistrationField = (props) => {
 
     let TStyle = {
         width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
@@ -61,19 +62,23 @@ const RegistrationField = ({ value }) => {
         fontWeight: '400',
         color: '#F7F7FC',
     }
+    let [registrationPayload, setRegistrationPayload] = useState({});
+    let sumbitFuction = () =>{
+        props.registration(registrationPayload)
+    }
     return (
         <View style={styles.container}>
             <View style = {styles.gap1}/>
             <Text style = {styles.textheader}>Регистрация</Text>
             <View style = {styles.gap2}/>
-            <TextField style = {TStyle} label="Имя" variant="outlined"> Номер телефону </TextField>
-            <TextField style = {TStyle} label="Фамилия" variant="outlined"> Номер телефону </TextField>
-            <TextField style = {TStyle} label="Отчество" variant="outlined"> Номер телефону </TextField>
-            <TextField style = {TStyle} label="Email" variant="outlined"> Номер телефону </TextField>
-            <TextField style = {TStyle} label="Телефон" variant="outlined"> Номер телефону </TextField>
-            <TextField style = {TStyle} label="Пароль" variant="outlined"> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Имя" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, firstName: event.target.value})}> Имя </TextField>
+            <TextField style = {TStyle} label="Фамилия" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, lastName: event.target.value})}> Фамилия </TextField>
+            <TextField style = {TStyle} label="Отчество" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, secondName: event.target.value})}> Отчество </TextField>
+            <TextField style = {TStyle} label="Email" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, email: event.target.value})}> email </TextField>
+            <TextField style = {TStyle} label="Телефон" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, phone: event.target.value})}> Номер телефону </TextField>
+            <TextField style = {TStyle} label="Пароль" variant="outlined" onChange={()=>setRegistrationPayload({...registrationPayload, password: event.target.value})}> Пароль </TextField>
             <View style = {styles.gap2}/>
-            <Button style = {BStyle}> Подтвердить</Button>
+            <Button style = {BStyle} onClick={()=>sumbitFuction()}>Подтвердить</Button>
         </View>
     );
 }
