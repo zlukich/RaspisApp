@@ -3,13 +3,24 @@ import { AppRegistry, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { Divider } from 'react-native-elements';
 import Swiper from 'react-native-swiper';
 import DateComponent from './DateComponent';
-import Subject from './Subject';
+import PieceOfNews from './PieceOfNews';
 
 const NewsSwiper = (props) => {
     return (
         <Swiper  showsButtons={false} loop={false} showsPagination={false}>
             
-                <Text>{props.infoType} фффффффф</Text>
+                 {props.infoTypes.map((type,index)=>
+                <ScrollView  key={index}>
+                <DateComponent dayName={type.Name}/>
+                {
+                    type.News.map(
+                    	(piece,index)=>
+                    <>
+                    <PieceOfNews header ={piece.Header}></PieceOfNews>
+                    <Divider/>
+                	</>)
+            	}
+            </ScrollView>)}
         </Swiper>
         
     );
