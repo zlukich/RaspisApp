@@ -6096,6 +6096,11 @@
   dependencies:
     "prop-types" "^15.5.10"
 
+"react-native-viewport-units@^0.0.5":
+  "integrity" "sha1-yGRIymSX5JqSVaSFifFgnWtz9QM="
+  "resolved" "https://registry.npmjs.org/react-native-viewport-units/-/react-native-viewport-units-0.0.5.tgz"
+  "version" "0.0.5"
+
 "react-native-web@^0.16.2":
   "integrity" "sha512-UqALRENjPmFGGbF6MO/+tLeBrGc/+2mne0xdxRfmlpPdrdaQXV8EQmiUTfz0HeWBPUP4U1y1OezohhPvKKJ60g=="
   "resolved" "https://registry.npmjs.org/react-native-web/-/react-native-web-0.16.2.tgz"
@@ -6111,7 +6116,7 @@
     "prop-types" "^15.6.0"
     "react-timer-mixin" "^0.13.4"
 
-"react-native@*", "react-native@>=0.5", "react-native@https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz":
+"react-native@*", "react-native@>= 0.4.4 < 1.0", "react-native@>=0.5", "react-native@https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz":
   "integrity" "sha512-3jHI2YufrJi7eIABRf/DN/I2yOkmIZ0vAyezTz+PAUJiEs4v//5LLojWEU+W53AZsnuaEMcl/4fVy4bd+OuUbA=="
   "resolved" "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz"
   dependencies:

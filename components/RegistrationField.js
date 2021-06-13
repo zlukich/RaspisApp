@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { useState } from 'react'
+var { vw, vh, vmin, vmax } = require('react-native-viewport-units');
 
 const styles = StyleSheet.create({
     text: {
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     },
     border: {
         // width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
+        width: Math.min(Math.max(15 * vw + 100, 150 * vh - 70 * vw), 90 * vw),
         backgroundColor: '#FCFCFC',
         borderWidth: 2,
         borderStyle: 'solid',
@@ -30,16 +32,18 @@ const styles = StyleSheet.create({
         height: '70px'
     },
     image: {
-        // width: 'min(max(30vw, 150vh - 60vw), 90vw)',
+        width: 100,
         aspectRatio: 1350 / 342
     },
     gap2: {
         // height: '2vh'
+        height: 2 * vh
     },
     button: {
         backgroundColor: '#3159B4',
         borderRadius: 10,
         // width: 'min(max(7vw + 50px, 80vh - 50vw), 50vw)',
+        width: Math.min(Math.max(7 * vw + 50, 80 * vh - 50 * vw), 50 * vw),
         height: '60px'
     },
     textheader: {
@@ -52,13 +56,15 @@ const styles = StyleSheet.create({
 const RegistrationField = (props) => {
 
     let TStyle = {
-        width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
-        paddingBottom: '2vh'
+        // width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
+        width: Math.min(Math.max(15 * vw + 100, 150 * vh - 70 * vw), 90 * vw),
+        paddingBottom: 2 * vh
     };
     let BStyle = {
         backgroundColor: '#3159B4',
         borderRadius: 10,
-        width: 'min(max(8vw + 80px, 80vh - 50vw), 50vw)',
+        // width: 'min(max(8vw + 80px, 80vh - 50vw), 50vw)',
+        width: Math.min(Math.max(8 * vw + 80, 80 * vh - 50 * vw), 50 * vw),
         height: '60px',
         textAlign: 'center',
         fontWeight: '400',

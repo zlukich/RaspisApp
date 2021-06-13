@@ -4,6 +4,8 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Logo from '../assets/logo.svg'
 import { useState } from 'react'
+var { vw, vh, vmin, vmax } = require('react-native-viewport-units');
+
 const styles = StyleSheet.create({
     text: {
         letterSpacing: 3,
@@ -22,6 +24,7 @@ const styles = StyleSheet.create({
     },
     border: {
         // width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
+        width: Math.min(Math.max(15 * vw + 100, 150 * vh - 70 * vw), 90 * vw),
         backgroundColor: '#FCFCFC',
         borderWidth: 2,
         borderStyle: 'solid',
@@ -31,18 +34,22 @@ const styles = StyleSheet.create({
     },
     image: {
         // width: 'min(max(30vw, 150vh - 60vw), 90vw)',
+        width: Math.min(Math.max(30 * vw, 150 * vh - 60 * vw), 90 * vw),
         aspectRatio: 1350 / 342
     },
     gap1: {
         // height: '10vh'
+        height: 10 * vh
     },
     gap2: {
         // height: '4vh'
+        height: 4 * vh
     },
     button: {
         backgroundColor: '#3159B4',
         borderRadius: 10,
         // width: 'min(max(7vw + 50px, 80vh - 50vw), 50vw)',
+        width: Math.min(Math.max(15 * vw + 50, 80 * vh - 50 * vw), 90 * vw),
         height: '60px'
     },
     textbutton: {
@@ -59,11 +66,13 @@ const LoginField = (props) => {
 
     let TStyle = {
         // width: 'min(max(15vw + 100px, 150vh - 70vw), 90vw)',
+        width: Math.min(Math.max(15 * vw + 100, 150 * vh - 70 * vw), 90 * vw),
     };
     let BStyle = {
         backgroundColor: '#3159B4',
         borderRadius: 10,
         // width: 'min(max(7vw + 50px, 80vh - 50vw), 50vw)',
+        width: Math.min(Math.max(15 * vw + 50, 80 * vh - 50 * vw), 90 * vw),
         height: '60px',
         textAlign: 'center',
         fontWeight: '400',
