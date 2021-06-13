@@ -1,10 +1,9 @@
 import * as React from "react";
 import {compose} from "redux";
-import LoginField from '../../components/LoginField';
 const {connect} = require("react-redux");
-import {loginThunk} from '../../store/auth-reducer'
+import Main from "./components/Main";
 
-class LoginContainer extends React.Component {
+class MainContainer extends React.Component {
 
     componentDidMount() {
         
@@ -12,7 +11,7 @@ class LoginContainer extends React.Component {
 
     render() {
         return (
-           <LoginField login={this.props.loginThunk}/>
+           <Main isAuth={this.props.isAuth}/>
         )
     }
 };
@@ -20,11 +19,12 @@ class LoginContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
+        isAuth: state.auth.isAuthorized,
     }
 }
 
 
 
 export default compose(connect(mapStateToProps,
-    {loginThunk}))(LoginContainer);
+    {}))(MainContainer);
 

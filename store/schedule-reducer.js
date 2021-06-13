@@ -60,7 +60,7 @@ export const scheduleReducer = (state=initialState, action)=>{
 
 export let getCurrentWeekScheduleAC = (payload) =>({type:GET_CURRENT_WEEK_SCHEDULE,payload})
 
-export let getCurrentWeekScheduleThunk = () =>{
+export let getCurrentWeekScheduleThunk = (payload) =>{
     return async (dispatch) => {
         let payload = await scheduleAPI.sendData();
         console.log(payload);

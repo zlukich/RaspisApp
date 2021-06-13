@@ -1,10 +1,10 @@
 import * as React from "react";
 import {compose} from "redux";
-import LoginField from '../../components/LoginField';
+import RegistrationField from '../../components/RegistrationField'
 const {connect} = require("react-redux");
-import {loginThunk} from '../../store/auth-reducer'
+import {registrationThunk} from '../../store/auth-reducer'
 
-class LoginContainer extends React.Component {
+class RegistrationContainer extends React.Component {
 
     componentDidMount() {
         
@@ -12,7 +12,7 @@ class LoginContainer extends React.Component {
 
     render() {
         return (
-           <LoginField login={this.props.loginThunk}/>
+           <RegistrationField registration = {this.props.registrationThunk}/>
         )
     }
 };
@@ -26,5 +26,5 @@ let mapStateToProps = (state) => {
 
 
 export default compose(connect(mapStateToProps,
-    {loginThunk}))(LoginContainer);
+    {registrationThunk}))(RegistrationContainer);
 
