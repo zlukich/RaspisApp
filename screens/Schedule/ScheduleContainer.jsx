@@ -7,7 +7,10 @@ import {getCurrentWeekScheduleThunk} from "../../store/schedule-reducer";
 class ScheduleContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getCurrentWeekScheduleThunk();
+        console.log('SXHEDULR')
+        console.log(this.props.SessionID)
+        if(this.props.SessionID)
+            this.props.getCurrentWeekScheduleThunk({SessionID: this.props.SessionID});
     }
 
     render() {
@@ -21,7 +24,8 @@ class ScheduleContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         days: state.schedule.days,
-        testDay: state.schedule.testDay
+        testDay: state.schedule.testDay,
+        SessionID: state.auth.SessionID
     }
 }
 
