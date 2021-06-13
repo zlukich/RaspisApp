@@ -6,22 +6,22 @@ let initialState={
         News:
         [
         {
-            Header:"New 1",
+            Header:"General new 1",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"New 2",
+            Header:"General new 2",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"New 3",
+            Header:"General new 3",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"New 4",
+            Header:"General new 4",
             Description:"Very interesting",
             Link:""
         }
@@ -32,22 +32,22 @@ let initialState={
         News:
         [
         {
-            Header:"Mmmmm",
+            Header:"Faculty new",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"Oaoaoao",
+            Header:"Faculty new 2",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"New 3",
+            Header:"Faculty new 3",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"New 4",
+            Header:"Faculty new 4",
             Description:"Very interesting",
             Link:""
         }
@@ -58,22 +58,22 @@ let initialState={
         News:
         [
         {
-            Header:"Gachi",
+            Header:"Group new",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"Maximovvv sucks online without registration and sms",
+            Header:"Group new 2",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"sukaaaaaaa",
+            Header:"Group new 3",
             Description:"Very interesting",
             Link:""
         },
         {
-            Header:"Blyat'",
+            Header:"Group new 4",
             Description:"Very interesting",
             Link:""
         }
