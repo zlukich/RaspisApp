@@ -1,92 +1,92 @@
 
-let initialState={
-    infoTypes:[
-    {
-        Name: "Общие",
-        News:
-        [
+let initialState = {
+    infoTypes: [
         {
-            Header:"General new 1",
-            Description:"Very interesting",
-            Link:""
+            Name: "Общие",
+            News:
+                [
+                    {
+                        Header: "Общая новость #1",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Общая новость #2",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Общая новость #3",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Общая новость #4",
+                        Description: "Very interesting",
+                        Link: ""
+                    }
+                ]
         },
         {
-            Header:"General new 2",
-            Description:"Very interesting",
-            Link:""
+            Name: "Факультет",
+            News:
+                [
+                    {
+                        Header: "Новость факультета #1",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость факультета #2",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость факультета #3",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость факультета #4",
+                        Description: "Very interesting",
+                        Link: ""
+                    }
+                ]
         },
         {
-            Header:"General new 3",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"General new 4",
-            Description:"Very interesting",
-            Link:""
+            Name: "Группа",
+            News:
+                [
+                    {
+                        Header: "Новость группы #1",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость группы #2",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость группы #3",
+                        Description: "Very interesting",
+                        Link: ""
+                    },
+                    {
+                        Header: "Новость группы #4",
+                        Description: "Very interesting",
+                        Link: ""
+                    }
+                ]
         }
-        ]
-    },
-    {
-        Name: "Факультет",
-        News:
-        [
-        {
-            Header:"Faculty new",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Faculty new 2",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Faculty new 3",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Faculty new 4",
-            Description:"Very interesting",
-            Link:""
-        }
-        ]
-    },
-    {
-        Name: "Группа",
-        News:
-        [
-        {
-            Header:"Group new",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Group new 2",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Group new 3",
-            Description:"Very interesting",
-            Link:""
-        },
-        {
-            Header:"Group new 4",
-            Description:"Very interesting",
-            Link:""
-        }
-        ]
-    }
     ]
 }
 
 
-export const infoReducer = (state=initialState, action)=>{
-    switch (action.type){
-        default:{
-            return {...state};
+export const infoReducer = (state = initialState, action) => {
+    switch (action.type) {
+        default: {
+            return { ...state };
         }
     }
 }

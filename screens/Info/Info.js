@@ -4,13 +4,18 @@ import Header from '../../components/Header';
 import NewsSwiper from '../../components/NewsSwiper';
 
 
+const styles = StyleSheet.create({
+    bg: {
+        backgroundColor: '#fff'
+    }
+})
+
 export const Info = (props) => {
     return (
-        <ScrollView stickyHeaderIndices={[0]}
+        <ScrollView style={styles.bg} stickyHeaderIndices={[0]}
             showsVerticalScrollIndicator={false}>
-            <Header value="Information" />
-
-            <NewsSwiper infoTypes={props.infoTypes}/>
+            <Header value="Новости" />
+            <NewsSwiper infoTypes={props.infoTypes} />
         </ScrollView>
     );
 }
