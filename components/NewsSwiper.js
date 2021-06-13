@@ -9,8 +9,9 @@ const NewsSwiper = (props) => {
     return (
         <Swiper  showsButtons={false} loop={false} showsPagination={false}>
             
-                <Text>{props.infoType}</Text>
+                <Text>{props.infoType} фффффффф</Text>
         </Swiper>
+        
     );
 };
 

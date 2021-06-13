@@ -4,6 +4,10 @@ import Info from "./Info";
 const {connect} = require("react-redux");
 import {getInfoTypeName} from "../../store/info-reducer";
 
+
+import {Provider} from "react-redux";
+import store from '../../store/store'
+
 class InfoContainer extends React.Component {
 
     componentDidMount() {
@@ -20,7 +24,7 @@ class InfoContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        infoTypes: state.infoTypes
+        infoTypes: store.getState().info + "AAAA"
     }
 }
 

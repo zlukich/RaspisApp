@@ -16,8 +16,9 @@ export const infoReducer = (state=initialState, action)=>{
     }
 }
 
+export let lalala = "bbbbbbbbb"
+
  export let getInfoTypeName = () =>{
-    return ()=>{
-		let payload = initialState;
+    return ()=>{ initialState
     }
 }

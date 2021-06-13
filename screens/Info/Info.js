@@ -10,7 +10,7 @@ export const Info = (props) => {
             showsVerticalScrollIndicator={false}>
             <Header value="Information" />
 
-            <NewsSwiper infoType={props.infoType} />
+            <NewsSwiper infoType={props.infoTypes}/>
         </ScrollView>
     );
 }

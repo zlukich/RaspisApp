@@ -1,7 +1,7 @@
 
 
 let initialState={
-    isAuthorized:false,
+    isAuthorized:true,
 }
 
 
