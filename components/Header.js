@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 })
 
 const Header = ({ value }) => {
-    if (value == 'Розклад занять') {
+    if (value == 'Расписание') {
         return (
             <View style={styles.container}>
                 <StatusBar

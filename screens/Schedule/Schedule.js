@@ -13,7 +13,7 @@ export const Schedule = (props) => {
     return (
         <ScrollView stickyHeaderIndices={[0]}
             showsVerticalScrollIndicator={false} style={styles.container}>
-            <Header value="Розклад занять" />
+            <Header value="Расписание" />
             <SwiperComponent days={props.days} />
         </ScrollView>
     );

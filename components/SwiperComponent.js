@@ -8,12 +8,15 @@ import Subject from './Subject';
 const SwiperComponent = (props) => {
     return (
         <Swiper  showsButtons={false} loop={false} showsPagination={false}>
-            {props.days.map((day,index)=><ScrollView  key={index}>
+            {props.days.map((day,index)=>
+                <ScrollView  key={index}>
                 <DateComponent dayName={day.dayName} dayDate={day.dayDate}/>
-                {day.subjectsList.map((subject,index)=><>
+                {
+                    day.subjectsList.map((subject,index)=><>
                     <Subject subject={subject} key={index}/>
                     <Divider />
-                </>)}
+                </>)
+            }
             </ScrollView>)}
         </Swiper>
     );

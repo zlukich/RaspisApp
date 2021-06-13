@@ -2,12 +2,14 @@ import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunkMiddleware from "redux-thunk";
 import scheduleReducer from "./schedule-reducer";
 import {authReducer} from "./auth-reducer";
+import {infoReducer} from "./info-reducer";
 
 
 let reducers = combineReducers(
     {
         schedule: scheduleReducer,
-        auth: authReducer
+        auth: authReducer,
+        info: infoReducer
     }
 );
 
