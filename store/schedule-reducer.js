@@ -1,66 +1,66 @@
-import {scheduleAPI} from "../api/api";
+import { scheduleAPI } from "../api/api";
 
 
 let GET_CURRENT_WEEK_SCHEDULE = 'schedule-reducer.js/GET_CURRENT_WEEK_SCHEDULE';
 
-let initialState={
-    days:[{
-        dayName: 'Monday',
-        dayDate:'10.05.2021',
-        subjectsList:[
+let initialState = {
+    days: [{
+        dayName: 'Понедельник',
+        dayDate: '10.05.2021',
+        subjectsList: [
             {
-                subjectName: 'Programming',
-                subjectType: 'Lecture',
-                subjectTheme: 'Introduction to OOP',
+                subjectName: 'Предмет #1',
+                subjectType: 'Лекция',
+                subjectTheme: 'Какая-то тема',
                 startTime: '9:30',
                 endTime: '10:50',
-                lecturerName: 'Vasiliy Vasilievich Vasiliev',
-                subjectRoom:'73'
+                lecturerName: 'Васильев В. В.',
+                subjectRoom: '73'
             },
             {
-                subjectName: 'Mathematics',
-                subjectType: 'Practice',
-                subjectTheme: 'Multiplying',
+                subjectName: 'Предмет #2',
+                subjectType: 'Практика',
+                subjectTheme: 'Какая-то тема',
                 startTime: '11:20',
                 endTime: '12:40',
-                lecturerName: 'Petr Petrovich Petrov',
-                subjectRoom:'45'
+                lecturerName: 'Петров П. П.',
+                subjectRoom: '45'
             }
         ]
     },
-        {
-            dayName: 'Tuesday',
-            dayDate:'11.05.2021',
-            subjectsList:[
-                {
-                    subjectName: 'Physics',
-                    subjectType: 'Module>',
-                    subjectTheme: 'Big Bang Theory',
-                    startTime: '8:00',
-                    endTime: '9:20',
-                    lecturerName: 'Ivan Ivanovich Ivanov',
-                    subjectRoom:'12'
-                },
-            ]
-        }
+    {
+        dayName: 'Вторник',
+        dayDate: '11.05.2021',
+        subjectsList: [
+            {
+                subjectName: 'Предмет #3',
+                subjectType: 'Модуль',
+                subjectTheme: 'Какая-то тема',
+                startTime: '8:00',
+                endTime: '9:20',
+                lecturerName: 'Иванов И.И.',
+                subjectRoom: '12'
+            },
+        ]
+    }
     ]
 }
 
-export const scheduleReducer = (state=initialState, action)=>{
-    switch (action.type){
-        case GET_CURRENT_WEEK_SCHEDULE:{
-            return {...state, days: action.payload}
+export const scheduleReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case GET_CURRENT_WEEK_SCHEDULE: {
+            return { ...state, days: action.payload }
         }
-        default:{
-            return {...state};
+        default: {
+            return { ...state };
         }
     }
 }
 
 
-export let getCurrentWeekScheduleAC = (payload) =>({type:GET_CURRENT_WEEK_SCHEDULE,payload})
+export let getCurrentWeekScheduleAC = (payload) => ({ type: GET_CURRENT_WEEK_SCHEDULE, payload })
 
-export let getCurrentWeekScheduleThunk = (payload) =>{
+export let getCurrentWeekScheduleThunk = (payload) => {
     return async (dispatch) => {
         let payload = await scheduleAPI.sendData();
         console.log(payload);

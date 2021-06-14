@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+// import TextField from '@material-ui/core/TextField'
+import { Button } from 'react-native-elements';
+import { Input } from 'react-native-elements';
 import Logo from '../assets/logo.svg'
 import { useState } from 'react'
 var { vw, vh, vmin, vmax } = require('react-native-viewport-units');
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
         color: '#A0A3BD',
     },
     container: {
-        paddingTop: 'calc(30vh - 8vw)',
+        // paddingTop: `calc(30 * vh - 8 * vw)`,
         flexDirection: 'column',
         alignItems: 'center',
     },
@@ -86,12 +87,12 @@ const LoginField = (props) => {
         <View style={styles.container}>
             <Image style={styles.image} source={Logo} />
             <View style={styles.gap1} />
-            <TextField style={TStyle} label="email" variant="outlined"
-                onChange={() => setLoginPayload({ ...loginPayload, email: event.target.value })}> email </TextField>
-            <TextField style={TStyle} label="Пароль" variant="outlined"
-                onChange={() => setLoginPayload({ ...loginPayload, password: event.target.value })}> Пароль </TextField>
+            {/* <TextField style={TStyle} label="Логин" variant="outlined" onChange={() => setLoginPayload({ ...loginPayload, email: SetValue() })} />
+            <TextField style={TStyle} label="Пароль" variant="outlined" onChange={() => setLoginPayload({ ...loginPayload, password: SetValue() })} /> */}
+            <Input style={TStyle} label="Логин" onChange={value => setLoginPayload({ ...loginPayload, email: value })} />
+            <Input style={TStyle} label="Пароль" onChange={value => setLoginPayload({ ...loginPayload, password: value })} />
             <View style={styles.gap2} />
-            <Button style={BStyle} onClick={() => sumbitFuction()}> Авторизация</Button>
+            <Button style={BStyle} onPress={() => sumbitFuction()} title="Авторизация" />
         </View>
     );
 }

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
     subjName: {
         flex: 1,
-        fontSize: 16,
+        fontSize: 18,
         color: '#000000',
         textAlign: 'left',
     },
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     subjTeacher: {
         flex: 3,
-        color: '#000000',
+        color: 'gray',
         fontSize: 16
     },
     subjTime: {
@@ -63,14 +63,14 @@ const styles = StyleSheet.create({
 
 const Subject = (props) => {
     const [expanded, setExpanded] = useState(false)
-    let {subjectName, subjectType, subjectTheme, startTime, endTime, lecturerName, subjectRoom} = props.subject;
+    let { subjectName, subjectType, subjectTheme, startTime, endTime, lecturerName, subjectRoom } = props.subject;
     return (
         <View style={styles.container}>
             <View style={styles.mainInfoContainer}>
                 <View style={styles.firstView}>
                     <Text style={styles.subjType}>{subjectType}</Text>
-                    <Text style={styles.subjTeacher}>{lecturerName}</Text>
                     <Text style={styles.subjName}>{subjectName}</Text>
+                    <Text style={styles.subjTeacher}>{lecturerName}</Text>
                 </View>
                 <View style={styles.secondView}>
                     <Text style={styles.subjTime}>{startTime} - {endTime}</Text>
@@ -78,7 +78,7 @@ const Subject = (props) => {
                 </View>
             </View>
             <View style={{ flex: 2 }}>
-                <ExtendedInfo isExpanded={expanded} subjectTheme={subjectTheme}/>
+                <ExtendedInfo isExpanded={expanded} subjectTheme={subjectTheme} />
             </View>
             <View style={styles.expander}>
                 <ExpandButton changeStateFunction={() => setExpanded(!expanded)} />

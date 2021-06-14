@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         color: '#A0A3BD',
     },
     container: {
-        paddingTop: 'calc(20vh - 4vw)',
+        // paddingTop: 'calc(20vh - 4vw)',
         flexDirection: 'column',
         alignItems: 'center',
     },
@@ -79,12 +79,12 @@ const RegistrationField = (props) => {
             <View style={styles.gap1} />
             <Text style={styles.textheader}>Регистрация</Text>
             <View style={styles.gap2} />
-            <TextField style={TStyle} label="Имя" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, firstName: event.target.value })}> Имя </TextField>
-            <TextField style={TStyle} label="Фамилия" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, lastName: event.target.value })}> Фамилия </TextField>
-            <TextField style={TStyle} label="Отчество" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, secondName: event.target.value })}> Отчество </TextField>
-            <TextField style={TStyle} label="Email" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, email: event.target.value })}> email </TextField>
-            <TextField style={TStyle} label="Телефон" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, phone: event.target.value })}> Номер телефону </TextField>
-            <TextField style={TStyle} label="Пароль" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, password: event.target.value })}> Пароль </TextField>
+            <TextField style={TStyle} label="Имя" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, firstName: event.target.value })} />
+            <TextField style={TStyle} label="Фамилия" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, lastName: event.target.value })} />
+            <TextField style={TStyle} label="Отчество" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, secondName: event.target.value })} />
+            <TextField style={TStyle} label="Email" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, email: event.target.value })} />
+            <TextField style={TStyle} label="Телефон" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, phone: event.target.value })} />
+            <TextField style={TStyle} label="Пароль" variant="outlined" onChange={() => setRegistrationPayload({ ...registrationPayload, password: event.target.value })} />
             <View style={styles.gap2} />
             <Button style={BStyle} onClick={() => sumbitFuction()}>Подтвердить</Button>
         </View>
